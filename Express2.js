@@ -7,13 +7,13 @@ const app = express()
 // we use express.static which usually exposes the public folder
 // but can be any thing, where the dependencies which are static and not dynamic can be exposed to public
 // app.use is used for middleware
-//app.use(express.static('./public'))
+app.use(express.static('./public'))
 
 // 1. When we use sendFile and send the html file 
 // what happens is that the dependency style.css is not available to the browser
 app.get('/', (req, res) =>{
-//res.status(200).sendFile('./index1.html')
-res.status(200).sendFile(path.resolve(__dirname,'./public/index1.html'))
+res.status(200).sendFile('./index1.html')
+//res.status(200).sendFile(path.resolve(__dirname,'./public/index1.html'))
 // uncomment this(16) and comment line no(10) to see how this works.
 });
 // 3. Technically index1.html is also a static file so it should also go into the public directory

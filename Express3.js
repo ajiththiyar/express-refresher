@@ -2,20 +2,13 @@
 // API uses res.json() and SSR used res.render()
 // API sends json data and SSR sends HTML and CSS templates
 
-
-
-
-
-
 const express = require('express')
 const app = express();
 
 
-app.use(express.static('./public'))
-
-
 app.get('/', (req, res) =>{
-    res.send("ola amigos")
+    // res.json is used in API's to send javascript object notation.
+    res.json([{kkonaW: "Allo Kkomrade"}, {name: "Jugni"}])
 })
 
 app.all('*', (req, res) =>{
@@ -26,5 +19,5 @@ app.all('*', (req, res) =>{
 
 
 app.listen(5000, ()=>{
-    console.log("Starting the server");
+    console.log("Server is listening on port 5000....");
 })
