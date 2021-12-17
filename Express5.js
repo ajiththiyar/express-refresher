@@ -22,7 +22,7 @@ app.get('/api/products/:productId', (req, res) => {
     res.json(Product);
 })
 
-
+// Example of how a in path parameter works
 app.get('/api/products/:productId/review/:reviewId',(req, res) => {
     console.log(req.params);
     const {reviewId, productId} = req.params;
